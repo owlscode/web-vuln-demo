@@ -13,8 +13,6 @@ function config($key = '')
         'pretty_uri' => true,
         'nav_menu' => [
             '' => 'Home',
-            'about' => 'About Us',
-            'products' => 'Products',
             'contact' => 'Contact',
         ],
         'template_path' => 'template',

@@ -48,8 +48,12 @@ function nav_menu($sep = ' | ')
  */
 function page_title()
 {
-    $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
-
+    if (config('pretty_uri')) {
+        preg_match("#/(?P<path>\w*)[\?/.]?#", $_SERVER['REQUEST_URI'], $matches);
+        $page = ($matches['path'] !== "") ? htmlspecialchars($matches['path']) : 'home';
+    } else {
+        $page = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 'Home';
+    }
     echo ucwords(str_replace('-', ' ', $page));
 }
 
@@ -62,7 +66,7 @@ function page_content()
 {
     if (config('pretty_uri')) {
         preg_match("#/(?P<path>\w*)[\?/.]?#", $_SERVER['REQUEST_URI'], $matches);
-        $page = ($matches['path'] !== "") ? $matches['path'] : 'home';
+        $page = ($matches['path'] !== "") ? htmlspecialchars($matches['path']) : 'home';
     } else {
         $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     }
