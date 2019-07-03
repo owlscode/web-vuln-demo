@@ -60,8 +60,12 @@ function page_title()
  */
 function page_content()
 {
-    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-
+    if (config('pretty_uri')) {
+        preg_match("#/(?P<path>\w*)[\?/.]?#", $_SERVER['REQUEST_URI'], $matches);
+        $page = ($matches['path'] !== "") ? $matches['path'] : 'home';
+    } else {
+        $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+    }
     $path = getcwd() . '/' . config('content_path') . '/' . $page . '.phtml';
 
     if (! file_exists($path)) {

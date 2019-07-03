@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+    web:
+        image: nginx
+        ports:
+            - "8080:80"
+        volumes:
+            - ./webhole:/www:ro
+            - ./conf.d:/etc/nginx/conf.d:ro
+
+    php:
+        image: php:fpm
+        volumes:
+            - ./webhole:/www:ro

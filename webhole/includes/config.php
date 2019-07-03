@@ -9,11 +9,11 @@ function config($key = '')
 {
     $config = [
         'name' => 'Simple PHP Website',
-        'site_url' => '',
+        'site_url' => 'http://localhost:8080',
         'pretty_uri' => true,
         'nav_menu' => [
             '' => 'Home',
-            'about-us' => 'About Us',
+            'about' => 'About Us',
             'products' => 'Products',
             'contact' => 'Contact',
         ],
