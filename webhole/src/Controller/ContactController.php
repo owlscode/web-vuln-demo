@@ -12,7 +12,11 @@ class ContactController extends AbstractController
      */
     public function contact()
     {
-        return $this->render('contact.html.twig');
+        return $this->render('contact.html.twig', [
+            'message' => 'Support',
+            ]);
+
+
     }
 
 
