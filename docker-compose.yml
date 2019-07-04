@@ -5,10 +5,10 @@ services:
         ports:
             - "8080:80"
         volumes:
-            - ./webhole:/www:ro
-            - ./conf.d:/etc/nginx/conf.d:ro
+            - ./webhole:/www
+            - ./conf.d:/etc/nginx/conf.d
 
     php:
         image: php:fpm
         volumes:
-            - ./webhole:/www:ro
+            - ./webhole:/www
