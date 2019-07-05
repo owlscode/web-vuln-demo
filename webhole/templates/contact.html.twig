@@ -4,12 +4,13 @@
 
 
 {% block body %}
+{{ test }}
 
-<h2 class="text-center"> {{ message }}</h2>
-<h4 class="text-left"> 
+<h2 class="text-center"> Support </h2>
     <div class="container">
+        {{ form(form) }}
                 <!-- Content here -->
-            <form method="post">    
+            <!--<form method="post">    
                 <div class="form-group">
                     <label for="exampleFormControlInput2">Email address</label>
 
@@ -42,15 +43,14 @@
                 
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Charger un fichier</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
                         </div>
 
         
-                        <submit type="button" name="file"  class="btn btn-primary">Valider</submit> 
+                <input type="submit" class="btn btn-primary"/>
 
-            </form>
+            </form>-->
  
  </div>
         
-</h4>
 {% endblock %}
