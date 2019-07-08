@@ -15,26 +15,48 @@ class LoginController extends AbstractController
      */
     public function essai(){
             
-                var_dump($_POST);
 
                 if(!empty($_POST)){
 
-                    $hostname = "localhost";
-                    $database = "basDeDonnee";
-                    $username = "root";
-                    $password = "root";
+                    $myusername = $_POST['username'];
+                    $mypassword = $_POST['password']; 
+                    print($mypassword);
                
-                    $dbh = new PDO('mysql:host=localhost;dbname=basDeDonnee', $username, $password);
-                    foreach($dbh->query('SELECT * from Utilisateur') as $row) {
-                        print_r($row);
-                    }
+                    $dbh = new PDO('mysql:host=db;dbname=basDeDonnee', 'root', 'root');
 
-                    if($_POST['username']=='aaa' && $_POST['password']=='bbb'){
+                    $un = $_POST['username'];
+                    $deux = $_POST['password'];
 
+                   // $sql ="SELECT * from Utilisateur WHERE id='+$un+' AND pass ='+$deux";
+                    $sql ="SELECT * from Utilisateur WHERE id='" . $un . "' AND pass ='" . $deux ."'";
+
+
+
+                    $trois = $dbh->query($sql);
+                   //var_dump($trois);
+                    //foreach ($trois as $row) {
+                       // print $row['id'] . "\t";
+                        //print $row['pass'] . "\t";
+                        //print $row['message'] . "\n";
+                    //}
+                    //var_dump($trois);
+
+                    $temp = $trois->rowCount();
+
+                    if($temp!==0){
+                           
                         return $this->render('affichage.html.twig', [
                             'message' => 'OUIIIIIIIIII',
                         ]);
     
+                    }else{
+                        return $this->render('affichage.html.twig', [
+                            'message' => 'NOOOOOOOOOOOON',
+                        ]);
+                        return $this->render('login.html.twig', [
+                            'message' => 'Ceci sera la page de login',
+                        ]);
+
                     }
 
 

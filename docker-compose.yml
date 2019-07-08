@@ -9,7 +9,7 @@ services:
             - ./conf.d:/etc/nginx/conf.d
 
     php:
-        image: php:fpm
+        build: ./php
         volumes:
             - ./webhole:/www
 
@@ -19,8 +19,14 @@ services:
          - "3306:3306"
         volumes:
          - data:/var/lib/mysql
+         
         environment:
             MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: exemple
+            MYSQL_USER: exemple
+            MYSQL_PASSWORD: exemple 
+            
 
 volumes:
   data:    
+
