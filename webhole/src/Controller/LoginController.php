@@ -20,15 +20,15 @@ class LoginController extends AbstractController
 
                     $myusername = $_POST['username'];
                     $mypassword = $_POST['password']; 
-                    print($mypassword);
+                   
                
-                    $dbh = new PDO('mysql:host=db;dbname=basDeDonnee', 'root', 'root');
+                    $dbh = new PDO('mysql:host=db;dbname=WebHole', 'root', 'root');
 
                     $un = $_POST['username'];
                     $deux = $_POST['password'];
 
                    // $sql ="SELECT * from Utilisateur WHERE id='+$un+' AND pass ='+$deux";
-                    $sql ="SELECT * from Utilisateur WHERE id='" . $un . "' AND pass ='" . $deux ."'";
+                    $sql ="SELECT * from user WHERE id='" . $un . "' AND password ='" . $deux ."'";
 
 
 
@@ -39,7 +39,6 @@ class LoginController extends AbstractController
                         //print $row['pass'] . "\t";
                         //print $row['message'] . "\n";
                     //}
-                    //var_dump($trois);
 
                     $temp = $trois->rowCount();
 
@@ -50,9 +49,7 @@ class LoginController extends AbstractController
                         ]);
     
                     }else{
-                        return $this->render('affichage.html.twig', [
-                            'message' => 'NOOOOOOOOOOOON',
-                        ]);
+                        
                         return $this->render('login.html.twig', [
                             'message' => 'Ceci sera la page de login',
                         ]);

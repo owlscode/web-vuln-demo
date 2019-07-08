@@ -19,12 +19,11 @@ services:
          - "3306:3306"
         volumes:
          - data:/var/lib/mysql
-         
+         - ./db/data-dump.sql:/docker-entrypoint-initdb.d/dump.sql
+
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: exemple
-            MYSQL_USER: exemple
-            MYSQL_PASSWORD: exemple 
+
             
 
 volumes:
