@@ -19,9 +19,10 @@ USE `WebHole`;
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` char(10) DEFAULT NULL,
-  `password` char(20) DEFAULT NULL,
+  `password` char(50) DEFAULT NULL,
   `creditCardNumber` char(50) DEFAULT NULL,
-  `role` char(10) DEFAULT NULL
+  `role` char(10) DEFAULT NULL,
+  `firstname` char(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -29,7 +30,7 @@ CREATE TABLE `user` (
 --
 
 LOCK TABLES `user` WRITE;
-INSERT INTO `user` VALUES ('aaaa','pass123','XKQNBCOIUY','admin'),('bbbb','abcdefg','APEOLDNFJF','user');
+INSERT INTO `user` VALUES ('aaaa','aafdc23870ecbcd3d557b6423a8982134e17927e','XKQNBCOIUY','admin','George'),('bbbb','abcdefg','APEOLDNFJF','user','Alphonse');
 UNLOCK TABLES;
 
 -- Dump completed on 2019-07-08 14:10:02

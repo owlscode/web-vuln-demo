@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<!-- 
+<div class="p-3 mb-2 bg-info text-white">Data about the user :
+    <p></p>
+    <p>login : {{ id }}</p>
+    <p>password : {{ password }}</p>
+    <p>creditCardNumber : {{ creditCardNumber }}</p>
+    <p>role : {{ role }}</p>
+</div>
+-->
+<div class="p-3 mb-2 bg-info text-white">
+    <p>Intel about the user</p>
+</div>
+<p></p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">firstname</th>
+      <th scope="col">login</th>
+      <th scope="col">password</th>
+      <th scope="col">creditCardNumber</th>
+      <th scope="col">role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ firstname }}</td>
+      <td>{{ id }}</td>
+      <td>{{ password }}</td>
+      <td>{{ creditCardNumber }}</td>
+      <td>{{ role }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+{% endblock %}
