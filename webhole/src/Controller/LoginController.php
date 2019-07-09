@@ -29,17 +29,28 @@ class LoginController extends AbstractController
 
                     $sel='chips';
                   
+                    $toCheck = $sel . $deux ;
 
-                    $hashedPassword = hash('sha256', $deux);
+
+                    $hashedPassword = hash('sha256', $toCheck);
                    //var_dump($hashedPassword);
                     $shaDeux = sha1($deux); 
                     //var_dump($shaDeux);
 
-                    $toCheck = $sel . $hashedPassword ;
+                    
                     //var_dump($toCheck);
 
                    // $sql ="SELECT * from Utilisateur WHERE id='+$un+' AND pass ='+$deux";
-                    $sql ="SELECT * from user WHERE id='" . $un . "' AND password ='" . $toCheck ."'";
+                    $sql ="SELECT * from user WHERE id='" . $un . "' AND password ='" . $hashedPassword ."'";
+
+
+                    //************************************************************************* */
+
+                    //$sql2 ="SELECT * from user";
+
+                    //$quer = $dbh->query($sql2);
+
+                    //************************************************************************* */
 
 
                     $trois = $dbh->query($sql);

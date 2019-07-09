@@ -30,7 +30,7 @@ CREATE TABLE `user` (
 --
 
 LOCK TABLES `user` WRITE;
-INSERT INTO `user` VALUES ('aaaa','chips9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c','XKQNBCOIUY','admin','George'),('bbbb','abcdefg','APEOLDNFJF','user','Alphonse');
+INSERT INTO `user` VALUES ('aaaa','8a9a60a0ded26ca6e68132b039383f94e580a493c1e8e540ac18faa8ba959caf','XKQNBCOIUY','admin','George'),('bbbb','abcdefg','APEOLDNFJF','user','Alphonse');
 UNLOCK TABLES;
 
 -- Dump completed on 2019-07-08 14:10:02
