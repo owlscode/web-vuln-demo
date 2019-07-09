@@ -19,7 +19,7 @@ USE `WebHole`;
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` char(10) DEFAULT NULL,
-  `password` char(50) DEFAULT NULL,
+  `password` char(100) DEFAULT NULL,
   `creditCardNumber` char(50) DEFAULT NULL,
   `role` char(10) DEFAULT NULL,
   `firstname` char(20) DEFAULT NULL
@@ -30,7 +30,7 @@ CREATE TABLE `user` (
 --
 
 LOCK TABLES `user` WRITE;
-INSERT INTO `user` VALUES ('aaaa','aafdc23870ecbcd3d557b6423a8982134e17927e','XKQNBCOIUY','admin','George'),('bbbb','abcdefg','APEOLDNFJF','user','Alphonse');
+INSERT INTO `user` VALUES ('aaaa','chips9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c','XKQNBCOIUY','admin','George'),('bbbb','abcdefg','APEOLDNFJF','user','Alphonse');
 UNLOCK TABLES;
 
 -- Dump completed on 2019-07-08 14:10:02

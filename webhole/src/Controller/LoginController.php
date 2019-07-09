@@ -27,14 +27,23 @@ class LoginController extends AbstractController
                     $un = $_POST['username'];
                     $deux = $_POST['password'];
 
-                    $shaDeux = sha1($deux);
+                    $sel='chips';
+                  
+
+                    $hashedPassword = hash('sha256', $deux);
+                   //var_dump($hashedPassword);
+                    $shaDeux = sha1($deux); 
+                    //var_dump($shaDeux);
+
+                    $toCheck = $sel . $hashedPassword ;
+                    //var_dump($toCheck);
 
                    // $sql ="SELECT * from Utilisateur WHERE id='+$un+' AND pass ='+$deux";
-                    $sql ="SELECT * from user WHERE id='" . $un . "' AND password ='" . $shaDeux ."'";
+                    $sql ="SELECT * from user WHERE id='" . $un . "' AND password ='" . $toCheck ."'";
 
 
                     $trois = $dbh->query($sql);
-                   var_dump($trois);
+                   //var_dump($trois);
                     foreach ($trois as $row) {
 
                         
@@ -67,8 +76,11 @@ class LoginController extends AbstractController
                             'firstname' => "$firstname",
 
                         ]);
+                        //var_dump($essai);
     
                     }
+
+                    
 
 
                 }
