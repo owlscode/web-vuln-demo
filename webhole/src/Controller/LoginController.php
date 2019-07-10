@@ -50,41 +50,42 @@ class LoginController extends AbstractController
 
                     //$quer = $dbh->query($sql2);
 
-                    //************************************************************************* */
+                    
 
+                    //************************************************************************* */
+                    //On affiche les lignes du tableau une à une à l'aide d'une boucle
+                   
+                        
 
                     $trois = $dbh->query($sql);
-                   //var_dump($trois);
+                   var_dump($trois);
+
+                   $tableau = array() ;
+                   
                     foreach ($trois as $row) {
 
+                        $tableau[]=$row;
                         
-                        $id = $row['id'];
-                        $password = $row['password'];
-                        $creditCardNumber = $row['creditCardNumber'];
-                        $role = $row['role'];
-                        $firstname = $row['firstname'];
+                        // $id = $row['id'];
+                        // $password = $row['password'];
+                        // $creditCardNumber = $row['creditCardNumber'];
+                        // $role = $row['role'];
+                        // $firstname = $row['firstname'];
 
 
-                        print $row['id'] . "\t";
-                        print $row['password'] . "\t";
-                        print $row['creditCardNumber'] . "\n";
-                        print $row['role'] . "\n";
-                        print $row['firstname'] . "\n";
+                       
                     }
 
 
                    // print $id;
 
                     $temp = $trois->rowCount();
+                    //var_dump($temp);
 
                     if($temp!==0){
                            
                         return $this->render('display.html.twig', [
-                            'id' => "$id",
-                            'password' => "$password",
-                            'creditCardNumber' => "$creditCardNumber",
-                            'role' => "$role",
-                            'firstname' => "$firstname",
+                            'tableau' => $tableau,
 
                         ]);
                         //var_dump($essai);
