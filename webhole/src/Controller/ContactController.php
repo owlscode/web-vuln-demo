@@ -13,12 +13,13 @@ use Symfony\Component\HttpFoundation\Request;
 
 
 class ContactController extends AbstractController
-{
+{   
     /**
      * @Route("/contact")
      */
     public function contact(Request $request)
     {
+
         $form = $this->createFormBuilder()
             ->add('email', EmailType::class)
             ->add('subject', ChoiceType::class, [
@@ -70,9 +71,9 @@ class ContactController extends AbstractController
         }
 
         return $this->render('contact.html.twig', [
-            'test' => 'pas post',
+            'test' => 'this is a test',
             'form' => $form->createView(),
-        ]);
+        ]);      
     }
-
+   
 }

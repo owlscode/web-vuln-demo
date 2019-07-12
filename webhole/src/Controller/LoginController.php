@@ -5,6 +5,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use \PDO;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+
 
 
 
@@ -14,13 +23,15 @@ class LoginController extends AbstractController
      * @Route("/login")
      */
     public function essai(){
+
+        $encoders = [new XmlEncoder(), new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
             
 
                 if(!empty($_POST)){
-
-                    $myusername = $_POST['username'];
-                    $mypassword = $_POST['password']; 
                    
+
                
                     $dbh = new PDO('mysql:host=db;dbname=WebHole', 'root', 'root');
 
@@ -34,31 +45,25 @@ class LoginController extends AbstractController
 
                     $hashedPassword = hash('sha256', $toCheck);
                    //var_dump($hashedPassword);
-                    $shaDeux = sha1($deux); 
-                    //var_dump($shaDeux);
 
-                    
-                    //var_dump($toCheck);
-
-                   // $sql ="SELECT * from Utilisateur WHERE id='+$un+' AND pass ='+$deux";
                     $sql ="SELECT * from user WHERE id='" . $un . "' AND password ='" . $hashedPassword ."'";
 
+                    // $session = new Session();
+                    // $session->start();
+                    
+                    // on enregistre les paramètres de notre visiteur comme variables de session ($login et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
+                    $_SESSION['username'] = $_POST['username'];
+                    $_SESSION['password'] = $_POST['password'];
 
-                    //************************************************************************* */
+                   
 
-                    //$sql2 ="SELECT * from user";
+                   
 
-                    //$quer = $dbh->query($sql2);
-
+                    // on redirige notre visiteur vers une page de notre section membre
                     
 
-                    //************************************************************************* */
-                    //On affiche les lignes du tableau une à une à l'aide d'une boucle
-                   
-                        
-
                     $trois = $dbh->query($sql);
-                   var_dump($trois);
+                   //var_dump($trois);
 
                    $tableau = array() ;
                    
@@ -70,34 +75,73 @@ class LoginController extends AbstractController
                         // $password = $row['password'];
                         // $creditCardNumber = $row['creditCardNumber'];
                         // $role = $row['role'];
-                        // $firstname = $row['firstname'];
-
-
-                       
+                        // $firstname = $row['firstname'];                      
                     }
 
-
-                   // print $id;
-
-                    $temp = $trois->rowCount();
-                    //var_dump($temp);
-
-                    if($temp!==0){
-                           
-                        return $this->render('display.html.twig', [
-                            'tableau' => $tableau,
-
-                        ]);
-                        //var_dump($essai);
-    
-                    }
-
+                    //sérialisation du tableau avec toutes les infos sur le user
                     
 
+                    $tableauSerialize = serialize($tableau);
+
+                    // var_dump($tableauSerialize);
+
+                    //desérialization du tableau
+                    //$tableauDeserialize = unserialize($tableauSerialize);
+                   
+                    $tab64 = base64_encode ($tableauSerialize);
+                   // var_dump($tab64);
+
+                    //var_dump($tableauDeserialize);
+
+                    //recupération d'une valeur dans ce tableau deserialize
+
+                    //var_dump($tableauDeserialize[0]['role']);
+
+                    // $leRole = $tableauDeserialize[0]['role'];
+                    // if($leRole==='admin'){
+                    //     var_dump("OK");
+                    // }else{
+                    //     var_dump("FAUX");
+                    // }
+
+
+
+                   
+
+
+
+
+                   
+
+                    $temp = $trois->rowCount();
+                    
+
+                    if($temp!==0){
+                       
+                        
+                           
+                        $response = new Response($this ->render('displayLogin.html.twig', [
+                            'tableau' => $tableau,
+
+                        ]));
+
+                        $response -> headers ->setCookie(Cookie::create("rank",$tab64)); 
+                        //var_dump($_COOKIE);
+                        //$a = unserialize($_COOKIE["rank"]);
+                        //var_dump($a);
+                        
+                       
+                        
+                        return $response;
+
+
+                    
+                    }                  
 
                 }
 
-                
+
+              
                 return $this->render('login.html.twig', [
                     'message' => 'Ceci sera la page de login',
                 ]);

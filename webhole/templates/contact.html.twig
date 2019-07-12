@@ -4,11 +4,51 @@
 
 
 {% block body %}
-{{ test }}
+
 
 <h2 class="text-center"> Support </h2>
     <div class="container">
-        {{ form(form) }}
+    {{ form_start(form) }}
+
+
+     <div class="form-group">
+                    
+
+
+                    {{ form_row(form.email, {'attr': {'class': 'form-control'}} ) }}
+                    
+                    
+                    {{ form_row(form.subject, {'attr': {'class': 'form-control'}} ) }}
+
+                    {{ form_row(form.message, {'attr': {'class': 'form-control'}} ) }}
+
+                    {{ form_row(form.file, {'attr': {'class': 'form-control'}} ) }}
+
+                    {{ form_row(form.submit, {'attr': {'class': 'btn btn-secondary'}} ) }}
+
+                    
+
+
+    </div>
+     {{ form_end(form) }}
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+    
+       
                 <!-- Content here -->
             <!--<form method="post">    
                 <div class="form-group">
@@ -50,7 +90,7 @@
                 <input type="submit" class="btn btn-primary"/>
 
             </form>-->
- 
+
  </div>
         
 {% endblock %}
