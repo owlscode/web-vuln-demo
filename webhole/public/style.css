@@ -18,3 +18,9 @@ nav .item {
 nav .active {
     border-bottom: 1px solid;
 }
+
+.wrap2 { 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    
+}

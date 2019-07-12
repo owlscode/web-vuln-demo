@@ -143,7 +143,7 @@ class LoginController extends AbstractController
 
               
                 return $this->render('login.html.twig', [
-                    'message' => 'Ceci sera la page de login',
+                    'message' => 'Please Login',
                 ]);
 
     }
