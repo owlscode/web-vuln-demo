@@ -5,11 +5,13 @@
 {% block body %}
     <h2>{{ message }}</h2>
 
-    <form class="form-signin" role="form" method="post" action="/login">
+    <form class="form-signin" role="form" method="post" action="/login" >
         <h4 class="form-signin-heading"></h4>
         <input type="text" class="form-control" name="username" placeholder="nom d'utilisateur" required autofocus></br>
         <input type="password" class="form-control" name="password" placeholder="mot de passe" required>
+        
         <button class="btn btn-lg btn-secondary btn-block" type="submit" name="login">Login</button>
+        
     </form>
 
 

@@ -13,6 +13,13 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+
+
+use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface;
 
 
 
@@ -27,6 +34,16 @@ class LoginController extends AbstractController
         $encoders = [new XmlEncoder(), new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
+
+
+        if (isset($_GET['ref'])) {
+
+            return $this->render('registration.html.twig', [
+                                'message' => 'Please Login',
+
+             ]);
+        } 
+        
             
 
                 if(!empty($_POST)){
@@ -108,17 +125,21 @@ class LoginController extends AbstractController
 
                    
 
-
+                    
 
 
                    
 
                     $temp = $trois->rowCount();
-                    
 
-                    if($temp!==0){
-                       
+                   
+                    
+                    
+                    if ($temp!==0)
+                        {
                         
+                       
+                        //$redirection = new RedirectResponse($this->monRouteur->generate('displayLogin.html.twig'));
                            
                         $response = new Response($this ->render('displayLogin.html.twig', [
                             'tableau' => $tableau,
@@ -126,11 +147,13 @@ class LoginController extends AbstractController
                         ]));
 
                         $response -> headers ->setCookie(Cookie::create("rank",$tab64)); 
+
+                       
                         //var_dump($_COOKIE);
                         //$a = unserialize($_COOKIE["rank"]);
                         //var_dump($a);
                         
-                       
+                        
                         
                         return $response;
 

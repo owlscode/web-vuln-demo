@@ -69,18 +69,12 @@ class RegistrationController extends AbstractController
                         }
                 }
                 return $this->render('echecRegistration.html.twig', [
-                    'message' => 'Registration',
+                    'message' => 'Register',
                 ]);
         }
-        return $this->render('login.html.twig', [
-            'message' => 'Registration',
+        return $this->render('echecRegistration.html.twig', [
+            'message' => 'Register',
         ]);
-
-        
-
-
-
-
 
 
     }//fin de la fonction
