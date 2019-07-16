@@ -40,34 +40,24 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
             $task = $form->getData();
-
-            // ... perform some action, such as saving the task to the database
-            // for example, if Task is a Doctrine entity, save it!
-            // $entityManager = $this->getDoctrine()->getManager();
-            // $entityManager->persist($task);
-            // $entityManager->flush();
 
             $file = $form['file']->getData();
             if ($file) {
                 $originalFilename = $file->getClientOriginalName();
                 $newFilePath = 'uploads/' . md5($originalFilename . time()) . '/';
 
-                // Move the file to the directory where brochures are stored
                 try {
                     $file->move(
                         $newFilePath,
                         $originalFilename,
                     );
                 } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
+
                 }
 
             }
 
-            //return $this->redirectToRoute('task_success');
         }
 
         return $this->render('contact.html.twig', [
