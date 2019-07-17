@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Request summary</h1>
+<p class="center">ID: {{ request.id }}</p>
+<br/>
+<div class="d-flex flex-row">
+    <img src="/uploads/{{ request.id }}/{{ request.filename }}" alt="screenshot"/>
+    <div>
+        <p>{{ request.email }}</p>
+        <p>{{ request.subject }}</p>
+        <p>{{ request.message | raw }}</p>
+    </div>
+</div>
+{% endblock %}
