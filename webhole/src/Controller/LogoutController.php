@@ -9,31 +9,24 @@ use Symfony\Component\HttpFoundation\Response;
 
 class LogoutController extends AbstractController
 {
-
-    
     /**
      * @Route("/logout")
      */
     public function index()
     {
-
         $session = new Session();
-        // $session->start();
+
+        // On enlève la session en cours
         $session->invalidate();
       
-        $response = new Response($this ->render('logout.html.twig', [
+        $response = new Response($this ->renderView('logout.html.twig', [
             'message' => 'DISCONNECTED',
 
         ]));
-        $response->headers->clearCookie('rank');
-        
-       
-        
+
+        // On enlève le cookie restant
+        $response->headers->clearCookie('rank');      
         return $response;
-
-
-
-      
-        
     }
 }
+

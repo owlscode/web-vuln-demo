@@ -58,7 +58,7 @@ class ContactController extends AbstractController
                         $originalFilename,
                     );
                 } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
+
                 }
                 
             }

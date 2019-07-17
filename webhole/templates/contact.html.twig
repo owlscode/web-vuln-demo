@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h2 class="text-center"> Support </h2>
+    <div class="container">
+    {{ form_start(form) }}
+
+
+        <div class="form-group">                   
+                    {{ form_row(form.email, {'attr': {'class': 'form-control'}} ) }}                       
+                    {{ form_row(form.subject, {'attr': {'class': 'form-control'}} ) }}
+                    {{ form_row(form.message, {'attr': {'class': 'form-control'}} ) }}
+                    {{ form_row(form.file, {'attr': {'class': 'form-control'}} ) }}
+                    {{ form_row(form.submit, {'attr': {'class': 'btn btn-secondary'}} ) }}
+        </div>
+    {{ form_end(form) }}
+ </div>
+        
+{% endblock %}
