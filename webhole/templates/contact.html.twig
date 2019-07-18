@@ -1,9 +1,21 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+<p></p>
 
-<h2 class="text-center"> Support </h2>
+<div class="p-3 mb-2 bg-dark text-white">
+    Support
+    <p></p>
+    <p></p>
+</div>
+
+
+
+
+
     <div class="container">
+    
+
     {{ form_start(form) }}
 
 
@@ -12,6 +24,7 @@
                     {{ form_row(form.subject, {'attr': {'class': 'form-control'}} ) }}
                     {{ form_row(form.message, {'attr': {'class': 'form-control'}} ) }}
                     {{ form_row(form.file, {'attr': {'class': 'form-control'}} ) }}
+                    <p></p>
                     {{ form_row(form.submit, {'attr': {'class': 'btn btn-secondary'}} ) }}
         </div>
     {{ form_end(form) }}

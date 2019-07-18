@@ -3,20 +3,35 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
+
+
+
 <div>
 <p></p>
 <p></p>
 <p></p>
-<div class="p-3 mb-2 bg-secondary text-white">
+<div class="p-3 mb-2 bg-dark text-white">
         Welcome to WebHole    
-</div>
 <p></p>
-        <img src="imagetrou2.png" class="img-fluid" alt="Responsive image">
+<p></p>
+</div>
+
+<div style="background-color:#130b01;">
+        <img src="cyberSecurite.jpg" class="img-fluid" alt="Responsive image" style="width: 500px;">
+</div>
 <p></p>
 </div>
 
 <div>
-        <a href="/login" title="" class="item"><button type="button" class="btn btn-outline-info">Login</button></a>
-        <a href="/logout" title="" class="item"><button type="button" class="btn btn-outline-info">Logout</button></a>
+        <a class="item" href="/login" title="">
+        <button class="btn btn-outline-secondary" type="button">Login</button>
+        </a>
+
+        <a class="item" href="/logout" title="">
+        <button class="btn btn-outline-secondary" type="button">Logout</button>
+        </a>
+
 </div>
+
+
 {% endblock %}

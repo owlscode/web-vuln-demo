@@ -37,37 +37,50 @@ class LoginController extends AbstractController
 
                 $tableau[] = $row;              
             }
-
+            $temp = $trois->rowCount();
+            if ($temp == 0){
+                return $this->render('login.html.twig', [
+                    'message' => 'Please Login',
+                    'ref' => ''
+                ]);
+            }
             //sérialisation du tableau avec toutes les infos sur le user
             $tableauSerialize = serialize($tableau[0]);
             //encodage en base 64
             $tab64 = base64_encode($tableauSerialize);
 
-            $temp = $trois->rowCount();
+            
 
-            if ($temp !== 0 && $_POST['ref']==='/registration') {
+            if ($_POST['ref'] === '/registration') {
 
                 //$response = new Response($this->redirectToRoute('registration'));
                 $response = new RedirectResponse($this->generateUrl('registration'));
-
-            }
-            elseif ($temp !== 0) {
+                //création du cookie administrateur/user
+                $response->headers->setCookie(Cookie::create("rank", $tab64));
+                return $response;
+            } elseif ($_POST['ref'] !== '/registration') {
                 $response = new Response($this->renderView('displayLogin.html.twig', [
                     'tableau' => $tableau,
                 ]));
-            }
                 //création du cookie administrateur/user
                 $response->headers->setCookie(Cookie::create("rank", $tab64));
-                return $response;   
+                return $response;
+            } 
+
+            return $this->render('login.html.twig', [
+                 'message' => 'Please Login',
+                  'ref' => ''
+            ]);
+            
         }
 
-        if(!isset($_GET['ref'])){
+        if (!isset($_GET['ref'])) {
             return $this->render('login.html.twig', [
                 'message' => 'Please Login',
                 'ref' => ''
             ]);
         }
-        
+
         return $this->render('login.html.twig', [
             'message' => 'Please Login',
             'ref' => $_GET['ref']
