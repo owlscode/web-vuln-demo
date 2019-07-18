@@ -105,7 +105,7 @@ class ContactController extends AbstractController
             $stmt->execute(array($id));
             
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            var_dump($rows);
+
         } catch (PDOException $e) {
             print "ttojzgfns";
         }

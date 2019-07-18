@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet" type="text/css" /> 
+        <link href="/style.css" rel="stylesheet" type="text/css" /> 
         <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -10,7 +10,6 @@
     </head>
     <body>
         <div class="wrap">
-            <div class="wrap2">
                 <header>
                     <h1 class="text-center">WebHole</h1>
                 
@@ -37,8 +36,9 @@
                         </nav>
                     </div>
                 </header>
-            {% block body %}{% endblock %}
-            </div>
+                <section>
+                {% block body %}{% endblock %}
+                </section>
 
         </div>
 

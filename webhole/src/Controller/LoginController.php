@@ -39,7 +39,7 @@ class LoginController extends AbstractController
             }
 
             //sérialisation du tableau avec toutes les infos sur le user
-            $tableauSerialize = serialize($tableau);
+            $tableauSerialize = serialize($tableau[0]);
             //encodage en base 64
             $tab64 = base64_encode($tableauSerialize);
 
