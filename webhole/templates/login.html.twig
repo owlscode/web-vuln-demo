@@ -3,15 +3,33 @@
 {% block title %}Login{% endblock %}
 
 {% block body %}
-    <h2>{{ message }}</h2>
 
+<p></p>
+    <h2 class="textColorWhite">{{ message }}</h2>
+    
+    <p class="textColorBlack">test </p>
     <form class="form-signin" role="form" method="post" action="/login" >
-        <h4 class="form-signin-heading"></h4>
-        <input type="text" class="form-control" name="username" placeholder="nom d'utilisateur" required autofocus></br>
-        <input type="password" class="form-control" name="password" placeholder="mot de passe" required>
-        <input type="hidden" class="form-control" name="ref" value="{{ ref }}">
+            <h4 class="form-signin-heading"></h4>
+            <p></p>
+            <input type="text" class="form-control" name="username" placeholder="nom d'utilisateur" required autofocus></br>
+            <p></p>
+            <input type="password" class="form-control" name="password" placeholder="mot de passe" required>
+            
+            <input type="hidden" class="form-control" name="ref" value="{{ ref }}">
+            <h5 class="textColorBlack">to test2</h5>
+            <p></p>
+
+
+        <button class="myButton" name="login" type="submit">Login</button>
+        <div>
         <p></p>
-        <button class="btn btn-lg btn-secondary btn-block" type="submit" name="login">Login</button>     
+        <h5 class="textColorBlack">to test</h5>
+
+        <p></p>
+        <img alt="Responsive image" class="img-fluid" src="Web_cyber_security_shutterstock_1041066733.jpg" style="width: 592px;">
+
+        </div>
+
     </form>
 
 {% endblock %}

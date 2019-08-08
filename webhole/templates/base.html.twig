@@ -9,47 +9,42 @@
         {% endblock %}
     </head>
     <body>
-        <div class="wrap">
-                <header>
+
         <div class="orangeColor">
 
-                    <h1 class="text-center">WebHole</h1>
-                
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                            <a class="navbar-brand" href="#"></a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
 
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/">Home</a>
-                                    </li>        
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/contact">Support</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/registration">Register</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
+        
+            <div class="titre">
+
+                <header> 
+                        <h1 class="textColorWhite">WebHole</h1>
+                        <p></p>
+                    
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <div class="topnav">
+                                <a class="active" href="/">Home</a>
+                                <a href="/contact">Support</a>
+                                <a href="/registration">Register</a>
+                                <a href="/login">Login</a>
+                            </div> 
                     </div>
-                </div>
-
                 </header>
-                <section>
-                {% block body %}{% endblock %}
-                </section>
+            </div>
+            
+            <div class="wrap">
+
+                    
+                {% block body %} {% endblock %}
+
+                    
+            </div>
+
+            <p>test</p>
 
         </div>
 
 
 
-
-    
 
         {% block javascripts %}
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -58,13 +53,3 @@
         {% endblock %}
     </body>
 </html>
-
-
-
-
-
-            {# <nav class="menu">
-                <a href="/" title="" class="item"><button type="button" class="btn btn-secondary">Home</button></a>  
-                <a href="/contact" title="" class="item"><button type="button" class="btn btn-secondary">Support</button></a>  
-                <a href="/registration" title="" class="item"><button type="button" class="btn btn-secondary">Register</button></a>
-            </nav> #}

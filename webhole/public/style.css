@@ -1,11 +1,40 @@
 
 .wrap { 
-    max-width: 1200px; 
-    margin: 50px auto; 
-    padding: 30px 40px; 
+    max-width: 1200px 1200px; 
+    margin: 50px 400px;  
+    padding: 20px 100px;  
     text-align: center; 
-    box-shadow: 0 4px 25px -4px #9da5ab; 
+	box-shadow: 0 4px 25px -4px #d0dbe4; 
+	background-color: #000000; 
 }
+
+.titre {
+text-align: center;
+
+}
+
+.essai{
+  margin: 50px 40px; 
+}
+
+.essai2{
+ text-align: center;
+ color: #eff6f8;
+
+}
+
+.littleMargin{
+  margin: 5px 5px;
+}
+
+.bigMargin{
+  margin: 80px 80px;
+}
+
+.megaMargin{
+   margin: 250px 250px;
+}
+
 article { 
     padding: 40px; 
     line-height: 150%; 
@@ -20,6 +49,121 @@ nav .active {
 }
 
 .orangeColor { 
-    background-color:#ca6914;
+    background-color:#000000;
     
 }
+
+.supportColor{
+  background-color:#e4670f;
+}
+
+.textColorWhite{
+    color: #eff6f8;
+}
+
+.RegisterWhite{
+    color: #eff6f8;
+    font-size: 35px; 
+}
+
+.RegisterWhite2{
+    color: #eff6f8;
+    font-size: 45px; 
+}
+
+.textColorBlack{
+    color: #000000;
+}
+
+.bouton15 {
+	border:none;
+	padding:6px 0 6px 0;
+	border-radius:75%;
+	border-bottom:3px solid #4753f3;
+	font:bold 13px Arial;
+	color:#555;
+	background:#fff;
+}
+
+.myButton {
+	-moz-box-shadow: 0px 0px 0px 2px #000000;
+	-webkit-box-shadow: 0px 0px 0px 2px #000000;
+	box-shadow: 0px 0px 0px 2px #000000;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff6624), color-stop(1, #000000));
+	background:-moz-linear-gradient(top, #ff6624 5%, #000000 100%);
+	background:-webkit-linear-gradient(top, #ff6624 5%, #000000 100%);
+	background:-o-linear-gradient(top, #ff6624 5%, #000000 100%);
+	background:-ms-linear-gradient(top, #ff6624 5%, #000000 100%);
+	background:linear-gradient(to bottom, #ff6624 5%, #000000 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6624', endColorstr='#000000',GradientType=0);
+	background-color:#ff6624;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4f463e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:0px 43px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #000000;
+}
+.myButton:hover {
+	
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ff6624',GradientType=0);
+	background-color:#000000;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.butn {
+  background: #ff8903;
+  background-image: -webkit-linear-gradient(top, #ff8903, #062030);
+  background-image: -moz-linear-gradient(top, #ff8903, #062030);
+  background-image: -ms-linear-gradient(top, #ff8903, #062030);
+  background-image: -o-linear-gradient(top, #ff8903, #062030);
+  background-image: linear-gradient(to bottom, #ff8903, #062030);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 9px 20px 10px 14px;
+  text-decoration: none;
+}
+
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: rgb(255, 132, 31);
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  /* background-color: rgb(247, 138, 36); */
+  color: white;
+}
+

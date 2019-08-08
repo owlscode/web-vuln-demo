@@ -32,7 +32,7 @@ class ContactController extends AbstractController
             ])
             ->add('message', TextareaType::class)
             ->add('file', FileType::class, [
-                'label' => "Capture d'écran",
+                'label' => "Screenshot",
                 'required' => false
             ])
             ->add('submit', SubmitType::class)

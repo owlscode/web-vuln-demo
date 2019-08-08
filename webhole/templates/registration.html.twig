@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
 {% block title %}Registration{% endblock %}
 
 {% block body %}
-    <h1>{{ message }}</h1>
+    <h1 class="textColorWhite">{{ message }}</h1>
 
     <form class="form-signin" role="form" method="post" action="/registration">
         <h4 class="form-signin-heading"></h4>
@@ -17,7 +17,11 @@
         <p></p>
         <input type="text" class="form-control" name="firstname" placeholder="firstname" required autofocus>
         <p></p>
-        <button class="btn btn-lg btn-secondary btn-block" type="submit" name="login">Submit</button>
+        <button class="myButton" type="submit" name="login">Submit</button>
     </form>
+
+    <div class="littleMargin">
+        <img alt="Responsive image" class="img-fluid" src="imageVerte4.PNG" style="width: 588px;">
+    </div>
 
 {% endblock %}

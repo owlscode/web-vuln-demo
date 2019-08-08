@@ -1,40 +1,46 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'base2.html.twig' %}
 {% block title %}Home{% endblock %}
-
 {% block body %}
 <p></p>
+<h5 class="textColorBlack">to test</h5>
 
-<div class="p-3 mb-2 bg-info text-white">
-
-
-    <p>Intel about the user</p>
-</div>
 <p></p>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">firstname</th>
-      <th scope="col">login</th>
-      <th scope="col">password</th>
-      <th scope="col">creditCardNumber</th>
-      <th scope="col">role</th>
+      <th scope="col"><p class="textColorWhite">#</p></th>
+      <th scope="col"><p class="textColorWhite">firstname</p></th>
+      <th scope="col"><p class="textColorWhite">login</p></th>
+      <th scope="col"><p class="textColorWhite">password</p></th>
+      <th scope="col"><p class="textColorWhite">creditCardNumber</p></th>
+      <th scope="col"><p class="textColorWhite">role</p></th>
     </tr>
   </thead>
   <tbody>
+<h2 class="textColorBlack">to test</h2>
+
+
+
+
 {% for key, user in tableau %}
     <tr>
-      <th scope="row">{{key + 1}}</th>
-      <td>{{ user.firstname }}</td>
-      <td>{{ user.id }}</td>
-      <td>{{ user.password   }}</td>
-      <td>{{ user.creditCardNumber   }}</td>
-      <td>{{ user.role   }}</td>
+      <th scope="row"><p class="textColorWhite">{{key + 1}}</p></th>
+      <td><p class="textColorWhite">{{ user.firstname }}</p></td>
+      <td><p class="textColorWhite">{{ user.id }}</p></td>
+      <td><p class="textColorWhite">{{ user.password   }}</p></td>
+      <td><p class="textColorWhite">{{ user.creditCardNumber   }}</p></td>
+      <td><p class="textColorWhite">{{ user.role   }}</p></td>
     </tr>
 {% endfor %}
   </tbody>
 </table>
+<h5 class="textColorBlack">to test</h5>
+<h5 class="textColorBlack">to test</h5>
+<h5 class="textColorBlack">to test</h5>
+
+<img alt="Responsive image" class="img-fluid" src="imageVerte4.PNG" style="width: 588px;">
+
+
 
 
 {% endblock %}

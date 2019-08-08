@@ -6,25 +6,27 @@
 {% block body %}
 
 
-<h2 class="text-center"> Support </h2>
+<h2 class="essai2"> Support </h2>
     <div class="container">
-    {{ form_start(form) }}
+     {{ form_start(form) }}
 
 
      <div class="form-group">
                     
 
 
-                    {{ form_row(form.email, {'attr': {'class': 'form-control'}} ) }}
+                    <div class="textColorWhite">{{ form_row(form.email, {'attr': {'class': 'form-control'}} ) }}</div>
                     
                     
-                    {{ form_row(form.subject, {'attr': {'class': 'form-control'}} ) }}
+                    <div class="textColorWhite">{{ form_row(form.subject, {'attr': {'class': 'form-control'}} ) }}</div>
 
-                    {{ form_row(form.message, {'attr': {'class': 'form-control'}} ) }}
+                    <div class="textColorWhite">{{ form_row(form.message, {'attr': {'class': 'form-control'}} ) }}</div>
 
-                    {{ form_row(form.file, {'attr': {'class': 'form-control'}} ) }}
+                    <div class="textColorWhite">{{ form_row(form.file, {'attr': {'class': 'form-control'}} ) }}</div>
 
-                    {{ form_row(form.submit, {'attr': {'class': 'btn btn-secondary'}} ) }}
+                    <div class="littleMargin">{{ form_row(form.submit, {'attr': {'class': 'myButton'}} ) }}</div>
+
+                    <img alt="Responsive image" class="img-fluid" src="Web_cyber_security_shutterstock_1041066733.jpg" style="width: 500px;">
 
                     
 

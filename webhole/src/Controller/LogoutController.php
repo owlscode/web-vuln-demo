@@ -19,7 +19,7 @@ class LogoutController extends AbstractController
         // On enlève la session en cours
         $session->invalidate();
       
-        $response = new Response($this ->renderView('logout.html.twig', [
+        $response = new Response($this ->renderView('index.html.twig', [
             'message' => 'DISCONNECTED',
 
         ]));

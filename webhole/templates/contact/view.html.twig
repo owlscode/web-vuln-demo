@@ -1,21 +1,32 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-<h1>Request summary</h1>
-<p class="center">ID: {{ request.id }}</p>
-<br/>
-<div class="d-flex flex-row px-5">
-    <img src="/uploads/{{ request.id }}/{{ request.filename }}" alt="screenshot" class="border p-5 w-25"/>
-    <div class="border w-75 p-5 d-flex flex-column align-center">
-        <label for="email">Email</label>
-        <p id="email" class="border">{{ request.email }}</p>
+<div class="textColorWhite">
+    <h1>Request summary</h1>
+    <p class="center">ID: {{ request.id }}</p>
+    <br/>
+</div>
 
-        <label for="subject">Subject</label>
-        <p id="subject" class="border">{{ request.subject }}</p>
+<div class="textColorWhite">
+    <div class="d-flex flex-row px-5">
+        <img src="/uploads/{{ request.id }}/{{ request.filename }}" alt="screenshot" class="border p-5 w-25"/>
+        <div class="border w-75 p-5 d-flex flex-column align-center">
+            <label for="email">Email</label>
+            <p id="email" class="border">{{ request.email }}</p>
 
-        <label for="message">Message</label>
-        <p id="message" class="border" style="min-height: 25px;">{{ request.message | raw }}</p>
+            <label for="subject">Subject</label>
+            <p id="subject" class="border">{{ request.subject }}</p>
 
+            <label for="message">Message</label>
+            <p id="message" class="border" style="min-height: 25px;">{{ request.message | raw }}</p>
+
+        </div>
     </div>
 </div>
+
+<div class="megaMargin">
+</div>
+
+
+
 {% endblock %}
